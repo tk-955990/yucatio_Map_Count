@@ -35,6 +35,9 @@ public class Employee {
   }
   
   
-  
+  @Override
+  public String toString() {
+	  return String.format("名前:%12s 部署:%13s 性別:%s", this.name,this.deploy,this.gender );
+  }
   
 }
