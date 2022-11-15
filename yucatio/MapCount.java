@@ -19,6 +19,7 @@ public class MapCount {
 	  employee.add(new Employee("ちか"       , "情報システム部"    ,"M")); 
 	  employee.add(new Employee("Hayashi"    , "情報セキュリティー部","M")); 
 	  employee.add(new Employee("astraea"    , "情報セキュリティー部","M")); 
+	  employee.add(new Employee("菅原鮮魚店" , "情報セキュリティー部","M")); 
 	  employee.add(new Employee("M.Pentes"   , "情報セキュリティー部","M")); 
 	  employee.add(new Employee("LOST_CANYON", "登山研究部"        ,"M")); 
 	  employee.add(new Employee("zero"       , "登山研究部"        ,"M")); 
