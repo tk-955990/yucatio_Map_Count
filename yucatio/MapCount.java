@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -32,33 +33,18 @@ public class MapCount {
 		employee.add(new Employee("FLASH"      , "登山研究部"          ,"F")); 
 
 
-
 		//    Map<String, Integer> countMap = countBySection(employee)
 
-		Map<String, Integer> countMap = employee
+		Map<String, Long> countMap = employee
 				.stream()
-				.collect(Collectors.groupingBy(employee::getSection,
+				.collect(Collectors.groupingBy(Employee::getSection,
 						Collectors.counting()));
 
-		for(Map.Entry<String,Integer>map: countMap.entrySet()) {
+		for(Entry<String, Long> map: countMap.entrySet()) {
 			System.out.println(map.getKey() + " :" + map.getValue());
 		}
-
-
-		/*		Map<String,Integer> countMap  = employee
-				.stream()
-				.collect(Collectors.groupingBy(employee::getSection,
-						Collectors.counting()));
-
-		for(Map.Entry<String,Integer>map: countMap.entrySet()) {
-			System.out.println(map.getKey() + " :" + map.getValue());
-		}
-
-		 */
 
 	}
-
-
 }
 
 
