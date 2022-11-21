@@ -2,10 +2,7 @@ package yucatio;
 
 public class Employee {
 
-	Employee() {
-
-	}
-
+	Employee() {}
 
 	public Employee(String name,String section,String gender) {
 		this.name = name;
@@ -42,7 +39,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return String.format("名前:%-15s 部署:%-15s 性別:%s", this.name,this.section,this.gender );
+		return String.format("名前:%15s 部署:%15s 性別:%s", this.name,this.section,this.gender );
 	}
 
 }

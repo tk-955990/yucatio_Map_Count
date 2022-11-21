@@ -20,6 +20,7 @@ public class MapCount {
 		employee.add(new Employee("saito_san"  , "情報システム部"      ,"M")); 
 		employee.add(new Employee("山葵"       , "情報システム部"      ,"F")); 
 		employee.add(new Employee("けこ"       , "情報システム部"      ,"F")); 
+		employee.add(new Employee("fengla"     , "情報システム部"      ,"F")); 
 		employee.add(new Employee("麻生"       , "情報システム部"      ,"M")); 
 		employee.add(new Employee("bata"       , "情報システム部"      ,"M")); 
 		employee.add(new Employee("市川"       , "情報システム部"      ,"M")); 
@@ -33,8 +34,25 @@ public class MapCount {
 		employee.add(new Employee("FLASH"      , "登山研究部"          ,"F")); 
 
 
+		for (Employee e:employee) {
+			System.out.println(e);
+			}
+		
+		
 		//    Map<String, Integer> countMap = countBySection(employee)
 
+/*		private static Map<String, Long> 
+		countBySection(List<Employee>employee) {
+
+			return employee.stream()
+					.collect(Collectors.groupingBy(Employee::getSection,
+							Collectors.counting()));
+		}
+		for(Entry<String, Long> map: countMap.entrySet()) {
+			System.out.println(map.getKey() + " :" + map.getValue());
+		}
+*/
+		
 		Map<String, Long> countMap = employee
 				.stream()
 				.collect(Collectors.groupingBy(Employee::getSection,
@@ -44,6 +62,7 @@ public class MapCount {
 			System.out.println(map.getKey() + " :" + map.getValue());
 		}
 
+		
 	}
 }
 
