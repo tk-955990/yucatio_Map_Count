@@ -1,5 +1,7 @@
 package yucatio;
 
+import java.nio.charset.Charset;
+
 public class Employee {
 
 	Employee() {}
@@ -37,9 +39,21 @@ public class Employee {
 	}
 
 
-	@Override
-	public String toString() {
-		return String.format("名前:%15s 部署:%15s 性別:%s", this.name,this.section,this.gender );
+	public String toString1() {
+		return String.format("名前:%-15s 部署:%-15s 性別:%s", this.name,this.section,this.gender );
 	}
 
+	public String toString() {
+		return "名前:" + format(this.name, 15) + "部署:" + format(this.section, 24) + "性別:" + format(this.gender,5);
+	}
+	
+	private String format(String target, int length) {
+		int byteDiff = (getByteLength(target, Charset.forName("UTF-8")) - target.length()) / 2;
+		return String.format("%-" + (length - byteDiff) + "s", target);
+	}
+	
+	private int getByteLength(String string, Charset charset) {
+		return string.getBytes(charset).length;
+	}
+	
 }
